@@ -1,0 +1,58 @@
+EMU8086 GENERATED LISTING. MACHINE CODE <- SOURCE.
+ 
+Q2. Part1.com -- emu8086 assembler version: 4.08  
+ 
+[ 10/20/2019  --  9:59:52 AM ] 
+ 
+===================================================================================================
+[LINE]     LOC: MACHINE CODE                          SOURCE
+===================================================================================================
+ 
+[   1]        :                                       
+[   2]        :                                       ; You may customize this and other start-up templates;
+[   3]        :                                       ; The location of this template is c:\emu8086\inc\0_com_template.txt
+[   4]        :                                       
+[   5]        :                                       org 100h
+[   6]        :                                       
+[   7]    0100: B4 01                                 mov ah,1
+[   8]    0102: CD 21                                 int 21h
+[   9]    0104: 8A D8                                 mov bl,al
+[  10]        :                                       
+[  11]    0106: 80 FB 41                              cmp bl,'A'
+[  12]    0109: EB 0B                                 jmp carriage
+[  13]        :                                       
+[  14]    010B: 80 FB 42                              cmp bl,'B'
+[  15]    010E: EB 0E                                 jmp linefeed
+[  16]        :                                       
+[  17]    0110: B4 4C                                 mov ah,4ch    ; other character then return to DOS
+[  18]    0112: CD 21                                 int 21h
+[  19]    0114: EB 10                                 jmp exit
+[  20]        :                                       
+[  21]    0116:                                       carriage:
+[  22]    0116: B4 02                                 mov ah,2
+[  23]    0118: B2 0D                                 mov dl,0Dh
+[  24]    011A: CD 21                                 int 21h
+[  25]    011C: EB 08                                 jmp exit
+[  26]        :                                       
+[  27]    011E:                                       linefeed:
+[  28]    011E: B4 02                                 mov ah,2
+[  29]    0120: B2 0A                                 mov dl,0Ah
+[  30]    0122: CD 21                                 int 21h
+[  31]    0124: EB 00                                 jmp exit
+[  32]    0126:                                       exit:
+[  33]        :                                       
+[  34]    0126: C3                                    ret
+[  35]        :                                       
+[  36]        :                                       
+[  37]        :                                       
+[  38]        :                                       
+[  39]        :                                       
+[  40]        :                                       
+ 
+===================================================================================================
+ 
+
+
+
+
+===================================================================================================
